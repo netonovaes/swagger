@@ -128,7 +128,7 @@ public class ClienteDAO {
 			Cliente clientel = clientes.get(idToUpdate);
 			clientel.setNome(cliente.getNome());
 			clientel.setSobrenome(cliente.getSobrenome());
-			clientel.setIniciais(cliente.getIniciais());
+			clientel.setCpf(cliente.getCpf());
 			clientel.setDataNascimento(cliente.getDataNascimento());
 			clientel.setDataAtualizacao(OffsetDateTime.now());
 			clientel.setStatus(cliente.isStatus());
@@ -177,7 +177,7 @@ public class ClienteDAO {
     	cliente.setId(125);
     	cliente.setNome("Marcos Alberto");
     	cliente.setSobrenome("Nogueira");
-    	cliente.setIniciais("MAN");
+    	cliente.setCpf("12345678901");
     	cliente.setStatus(true);
     	cliente.setTipo(TipoEnum.INTERNO);
     	cliente.setDataNascimento(LocalDate.of(1983, 6, 12));

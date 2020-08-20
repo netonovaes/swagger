@@ -28,8 +28,8 @@ public class Cliente   {
   @JsonProperty("sobrenome")
   private String sobrenome = null;
 
-  @JsonProperty("iniciais")
-  private String iniciais = null;
+  @JsonProperty("cpf")
+  private String cpf = null;
 
   @JsonProperty("dataNascimento")
   private LocalDate dataNascimento = null;
@@ -134,24 +134,24 @@ public class Cliente   {
     this.sobrenome = sobrenome;
   }
 
-  public Cliente iniciais(String iniciais) {
-    this.iniciais = iniciais;
+  public Cliente iniciais(String cpf) {
+    this.cpf = cpf;
     return this;
   }
 
   /**
-   * Iniciais do nome completo do cliente.
-   * @return iniciais
+   * CPF do cliente.
+   * @return cpf
   **/
-  @ApiModelProperty(value = "Iniciais do nome completo do cliente.")
+  @ApiModelProperty(value = "CPF do cliente.")
 
-@Size(min=2,max=7) 
-  public String getIniciais() {
-    return iniciais;
+@Size(min=11,max=11) 
+  public String getCpf() {
+    return cpf;
   }
 
-  public void setIniciais(String iniciais) {
-    this.iniciais = iniciais;
+  public void setCpf(String cpf) {
+    this.cpf = cpf;
   }
 
   public Cliente dataNascimento(LocalDate dataNascimento) {
@@ -249,7 +249,7 @@ public class Cliente   {
     return Objects.equals(this.id, cliente.id) &&
         Objects.equals(this.nome, cliente.nome) &&
         Objects.equals(this.sobrenome, cliente.sobrenome) &&
-        Objects.equals(this.iniciais, cliente.iniciais) &&
+        Objects.equals(this.cpf, cliente.cpf) &&
         Objects.equals(this.dataNascimento, cliente.dataNascimento) &&
         Objects.equals(this.dataAtualizacao, cliente.dataAtualizacao) &&
         Objects.equals(this.status, cliente.status) &&
@@ -258,7 +258,7 @@ public class Cliente   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, nome, sobrenome, iniciais, dataNascimento, dataAtualizacao, status, tipo);
+    return Objects.hash(id, nome, sobrenome, cpf, dataNascimento, dataAtualizacao, status, tipo);
   }
 
   @Override
@@ -269,7 +269,7 @@ public class Cliente   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    nome: ").append(toIndentedString(nome)).append("\n");
     sb.append("    sobrenome: ").append(toIndentedString(sobrenome)).append("\n");
-    sb.append("    iniciais: ").append(toIndentedString(iniciais)).append("\n");
+    sb.append("    cpf: ").append(toIndentedString(cpf)).append("\n");
     sb.append("    dataNascimento: ").append(toIndentedString(dataNascimento)).append("\n");
     sb.append("    dataAtualizacao: ").append(toIndentedString(dataAtualizacao)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
